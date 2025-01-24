@@ -2,6 +2,7 @@ import { dirname, importx } from "@discordx/importer";
 import type { Interaction, Message } from "discord.js";
 import { IntentsBitField } from "discord.js";
 import { Client } from "discordx";
+import "./healthCheck"; // Import the health check server
 
 export const bot = new Client({
   // To use only guild command

@@ -32,9 +32,6 @@ RUN npm install --omit=dev
 # Move build files
 COPY --from=build-runner /tmp/app/build /app/build
 
-# Install express for health check
-RUN npm install express
-
 # Expose port for health check
 EXPOSE 3000
 

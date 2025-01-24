@@ -2,7 +2,19 @@ import { dirname, importx } from "@discordx/importer";
 import type { Interaction, Message } from "discord.js";
 import { IntentsBitField } from "discord.js";
 import { Client } from "discordx";
-import "./healthCheck"; // Import the health check server
+import express from "express";
+
+//this part is for health check
+const app = express();
+const port = 3000;
+
+app.get("/", (req, res) => {
+  res.send("Bot is running");
+});
+
+app.listen(port, () => {
+  console.log(`Health check server is running on port ${port}`);
+});
 
 export const bot = new Client({
   // To use only guild command
